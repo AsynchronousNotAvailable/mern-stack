@@ -6,11 +6,11 @@ const WorkoutForm = () => {
   const [reputation, setReputation] = useState("");
   const [error, setError] = useState(null);
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const workout = { title, load, reputation };
+    e.preventDefault(); //default action is to refresh the page
+    const workout = { title, load, reputation }; // create a dummy workout object
     const response = await fetch("/api/workouts", {
       method: "POST",
-      body: JSON.stringify(workout),
+      body: JSON.stringify(workout), //convert the dummy workout object into JSON string and put it in body
       headers: {
         "Content-Type": "application/json",
       },
